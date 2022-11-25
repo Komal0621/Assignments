@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Bubbling</title>
+    <style>
+        div{
+            min-width: 100px;
+            min-height: 100px;
+            padding: 40px;
+            border: 5px solid;
+            text-align: center;
+        }
+        #grandfather{
+            border-color: red;
+            text-align: center;
+        }
+        #father{
+            border-color: blue;
+            border-radius: 5px;
+        }
+        #child{
+            border-color:green;
+            border-radius: 25px;
+        }         
+    </style>
+</head>
+<body>
+    <div id="grandfather">Grandfather
+        <div id="father">Father
+            <div id="child">Child
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector("#grandfather")
+        .addEventListener('click',() =>{
+            alert("This is the grandfather");
+            console.log("This is the grandfather");
+        });
+
+         document.querySelector("#father")
+        .addEventListener('click',() =>{
+            alert("This is the father");
+            console.log("This is the father");
+        });
+
+         document.querySelector("#child")
+        .addEventListener('click',() =>{
+            alert("This is the child");
+            console.log("This is the child");
+        });     
+    </script>
+</body>
+</html>
